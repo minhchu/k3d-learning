@@ -17,7 +17,7 @@ k3d registry create test-app-registry --port 5050
 2. Create a cluster with above registry:
 
 ```bash 
-k3d cluster create -p "9900:80@loadbalancer" --registry-use k3d-test-app-registry:5050 --registry-config registries.yaml mycluster
+k3d cluster create -p "9900:80@loadbalancer" --registry-use test-app-registry:5050 --registry-config registries.yaml mycluster
 ```
 
 3. Dockerize Nodejs App:

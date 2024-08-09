@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: k3d-test-app-registry:5050/nodejs-app:1.0
+          image: test-app-registry:5050/nodejs-app:1.0
           imagePullPolicy: Always
           resources:
             # Specifying the resourses that we might need for our application

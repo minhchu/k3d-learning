@@ -1,0 +1,21 @@
+apiVersion: k3d.io/v1alpha4
+kind: Simple
+metadata:
+  name: mycluster
+servers: 3
+agents: 3
+ports:
+- port: 80:80
+  nodeFilters:
+    - loadbalancer
+registries:
+  create:
+    name: test-app-registry
+    host: "0.0.0.0"
+    hostPort: "5050"
+  config: |
+    mirrors:
+      "my.registry":
+        endpoint:
+          - http://test-app-registry:5050
+
